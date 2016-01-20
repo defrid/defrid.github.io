@@ -13,29 +13,14 @@
 	</head>
 	<body ng-controller="MainController">
 		<div class="container">
-			<h3><b>Приведение типов</b></h3>
-			<table class="table">
-				<tr ng-repeat="expr in expressions1">
-					<td>{{expr}}</td>
-					<td ng-show="block1">{{$eval(expr)}}</td>
-				</tr>
-			</table>
-			<p><button class="btn btn-primary" ng-click="block1 = true">Ответы</button></p>
-			<h3><b>Логические операторы</b></h3>
-			<table class="table">
-				<tr ng-repeat="expr in expressions2">
-					<td>{{expr}}</td>
-					<td ng-show="block2">{{$eval(expr)}}</td>
-				</tr>
-			</table>
-			<p><button class="btn btn-primary" ng-click="block2 = true">Ответы</button></p>
 			<pre>
 $scope.obj = {
     numValue: 1,
     strValue: "String",
     objValue: {
         value: "Value"
-    }
+    },
+    "0000": "Its possible!"
 };
 
 $scope.array = [ 1, 2, 3, 4 ];
@@ -54,6 +39,23 @@ $scope.array = [ 1, 2, 3, 4 ];
 				</tr>
 			</table>
 			<p><button class="btn btn-primary" ng-click="block4 = true">Ответы</button></p>
+			<h3><b>Приведение типов</b></h3>
+			<table class="table">
+				<tr ng-repeat="expr in expressions1">
+					<td>{{expr}}</td>
+					<td ng-show="block1">{{$eval(expr)}}</td>
+				</tr>
+			</table>
+			<p><button class="btn btn-primary" ng-click="block1 = true">Ответы</button></p>
+			<h3><b>Логические операторы</b></h3>
+			<table class="table">
+				<tr ng-repeat="expr in expressions2">
+					<td>{{expr}}</td>
+					<td ng-show="block2">{{$eval(expr)}}</td>
+				</tr>
+			</table>
+			<p><button class="btn btn-primary" ng-click="block2 = true">Ответы</button></p>
+
 		</div>
 		<script src="app.js"></script>
 	</body>

@@ -35,7 +35,8 @@
 			strValue: "String",
 			objValue: {
 				value: "Value"
-			}
+			},
+			"0000": "Its possible!"
 		};
 
 		$scope.array = [ 1, 2, 3, 4 ];
@@ -51,6 +52,8 @@
 		];
 
 		$scope.expressions4 = [
+			{ value:'obj.0000', result: 'Error: Unexpected token 0' },
+			{ value:'obj["0000"]', result: 'Its possible!' },
 			{ value:'obj.noValue', result: 'undefined' },
 			{ value:'obj["noValue"]', result: 'undefined' },
 			{ value:'obj.noValue.Value', result: 'ReferenceError: obj.noValue is not defined' }
