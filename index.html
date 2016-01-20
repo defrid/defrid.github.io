@@ -1,0 +1,60 @@
+<html ng-app="App">
+	<head>
+		<meta charset="UTF-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	</head>
+	<body ng-controller="MainController">
+		<div class="container">
+			<h3><b>Приведение типов</b></h3>
+			<table class="table">
+				<tr ng-repeat="expr in expressions1">
+					<td>{{expr}}</td>
+					<td ng-show="block1">{{$eval(expr)}}</td>
+				</tr>
+			</table>
+			<p><button class="btn btn-primary" ng-click="block1 = true">Ответы</button></p>
+			<h3><b>Логические операторы</b></h3>
+			<table class="table">
+				<tr ng-repeat="expr in expressions2">
+					<td>{{expr}}</td>
+					<td ng-show="block2">{{$eval(expr)}}</td>
+				</tr>
+			</table>
+			<p><button class="btn btn-primary" ng-click="block2 = true">Ответы</button></p>
+			<pre>
+$scope.obj = {
+    numValue: 1,
+    strValue: "String",
+    objValue: {
+        value: "Value"
+    }
+};
+
+$scope.array = [ 1, 2, 3, 4 ];
+			</pre>
+			<table class="table">
+				<tr ng-repeat="expr in expressions3">
+					<td>{{expr}}</td>
+					<td ng-show="block3">{{$eval(expr)}}</td>
+				</tr>
+			</table>
+			<p><button class="btn btn-primary" ng-click="block3 = true">Ответы</button></p>
+			<table class="table">
+				<tr ng-repeat="expr in expressions4">
+					<td>{{expr.value}}</td>
+					<td ng-show="block4">{{expr.result}}</td>
+				</tr>
+			</table>
+			<p><button class="btn btn-primary" ng-click="block4 = true">Ответы</button></p>
+		</div>
+		<script src="app.js"></script>
+	</body>
+</html>
